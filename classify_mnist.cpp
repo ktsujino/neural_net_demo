@@ -48,8 +48,8 @@ int main() {
   MNistDataSet testSet("mnist/t10k-images-idx3-ubyte", "mnist/t10k-labels-idx1-ubyte");
   
   Network<double> net;
-  net.addLayer(Layer<double>(trainSet.getNumRows() * trainSet.getNumColumns(), 300, Layer<double>::ActivationType::RELU));
-  net.addLayer(Layer<double>(300, 10, Layer<double>::ActivationType::SOFTMAX));
+  net.addLayer(trainSet.getNumRows() * trainSet.getNumColumns(), 300, Layer<double>::ActivationType::RELU);
+  net.addLayer(300, 10, Layer<double>::ActivationType::SOFTMAX);
 
   double prevLoss = std::numeric_limits<double>::max();
   double learningRate = 0.2;

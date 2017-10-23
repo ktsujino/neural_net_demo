@@ -214,7 +214,8 @@ public:
   {
   }
 
-  void addLayer(Layer<S> layer) {
+  void addLayer(int inSize, int outSize, typename Layer<S>::ActivationType activationType) {
+    Layer<S> layer(inSize, outSize, activationType);
     _layers.push_back(layer);
   }
 
